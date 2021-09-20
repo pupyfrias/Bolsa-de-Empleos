@@ -1,0 +1,48 @@
+
+    <br>
+    <div class="">
+        <input type="text">
+        <button id="btn-Search">Search</button>
+        <button id="btn-Post">Post a job</button>
+    </div>
+<br>
+    <h2>Post a job</h2>
+<br>
+    <form enctype="multipart/form-data" action="/poster" method="POST" >
+        <label for="Combox-Categoria">Categoria</label>
+        <select name="categoria" id="Combox-Categoria" required>
+                <option value="">Select an Option</option>
+            <option value="Desing" >Desing</option>
+            <option value="Programacion">Programacion</option>
+        </select>
+      
+
+        <label for="">Type</label>
+        <input type="radio" name="type" value="Full Time" required >Full Time
+        <input type="radio" name="type" value="Part Time" required>Part Time
+        <input type="radio" name="type" value="Freelance" required >Freelance
+
+<br>   
+        <label for="">Company</label>
+        <input type="text" name="company" id="input-company" required>
+<br>   
+        <label for="">Logo</label>
+        <input type="file" name="logo" id="input-logo">
+<br>   
+        <label for="">URL</label>
+        <input type="text" name="url" id="input-url">
+<br>   
+        <label for="">Position</label>
+        <input type="text" id="input-position" name="position" required>  
+<br>   
+        <label for="">Location</label>
+        <input type="text" name="location" id="input-location" required> 
+        
+<br>   
+        <label for="">Description</label>
+        <textarea name="description" id="" cols="30" rows="10" required></textarea>
+<br>
+        <button type="submit">Inicial</button>
+    </form>
+
+
