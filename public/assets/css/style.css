@@ -1,3 +1,134 @@
-.body{
-    background-color: ;
+#btn-Search{
+
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    margin-top: 1cm;
+    margin-right: 20cm;
+    margin-bottom: 1cm;
+    background-color: rgb(33, 133, 208);
+    border:0px;
+    width: 80px;
+    height: 33px;
+    
+    
+    
+}
+
+#btn-Post{
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(33, 186, 69);
+    border:0px;
+    width: 130px;
+    height: 33px;
+}
+
+#link-Post{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#input-search{
+    width: 175px;
+    height: 38px;
+    display: inline  !important;
+}
+
+#input-search1{
+    width: 175px;
+    height: 38px;
+    display: inline  !important;
+}
+
+#h2-desing{
+
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 25px;
+}
+
+#h2-programming{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    font-size: 25px;
+}
+
+#img-desing{
+
+    width: 30px;
+    margin-left: 13.7cm ;
+}
+
+#img-programming{
+    width: 30px;
+    margin-left: 13cm ;   
+}
+
+/* Diseño jobs*/
+
+#h2-post{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#post-label-categoria{
+    margin-right: 1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#type-post{
+    margin-right: 2cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#company-post{
+    margin-right: 1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+
+#logo-post{
+    margin-right:  1.8cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+
+#url-post{
+    margin-right:  1.9cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+}
+
+#position-post{
+    margin-right:  1.1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+
+#location-post{
+    margin-right:  1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;     
+}
+
+
+#description-post{
+    margin-right:  0.5cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;       
+}
+
+
+#textarea-post{
+    resize: none;
+    margin-left: 2.65cm;
+
+}
+
+#boton-post{
+
+
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 1cm;
+    background-color: rgb(33, 133, 208);
+    border:0px;
+    width: 80px;
+    height: 33px;
 }
