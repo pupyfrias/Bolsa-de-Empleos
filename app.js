@@ -12,7 +12,6 @@ const index = require('./routers/index')
 const page404 = require('./routers/404')
 const poster = require('./routers/poster')
 
-
 //SETTINGS
 
 app.engine('hbs',handlebars(

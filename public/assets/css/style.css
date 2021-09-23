@@ -8,10 +8,7 @@
     background-color: rgb(33, 133, 208);
     border:0px;
     width: 80px;
-    height: 33px;
-    
-    
-    
+    height: 33px;  
 }
 
 #btn-Post{
@@ -42,16 +39,13 @@
 
 #h2-desing{
 
-    text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
     font-size: 25px;
 }
 
 #h2-programming{
-    text-decoration: none;
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
     font-size: 25px;
 }
 
@@ -132,3 +126,4 @@
     width: 80px;
     height: 33px;
 }
+
