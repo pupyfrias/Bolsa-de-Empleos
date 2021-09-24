@@ -1,9 +1,7 @@
 const jobs = require('../models/jobs')
 
 exports.GetPosterJob =(req,res,next)=>{
-    jobs.findAll().then(result=>{
-        console.log('yes')
-        console.log(result)
+    jobs.findAll().then(result=>{ 
         res.render("poster/post-jobs",{
             pageTitle: "Post a Jobs"
         })
@@ -26,7 +24,8 @@ exports.PostPosterJob = (req,res,next)=>{
         logo:logo,
         position:position,
         location:location,
-        description:description
+        description:description,
+        active: true
     }).catch(err=>{
         console.log(err)
     })

@@ -2,28 +2,41 @@ const jobs = require('../models/jobs')
 
 exports.GetIndex = (req, res, next) => {
 
-    jobs.findAll().then(result => {
+    jobs.findAll({where:{active:true},order:[['updatedAt','DESC']]}).then(result => {
 
         const resultado = result.map(datos => datos.dataValues)
         //console.log(resultado)
-        let desing = [];
-        let programacion = [];
+        let desingList = [];
+        let programacionList = [];
+        let desing = 0;
+        let programacion = 0;
 
         resultado.forEach(data=>{
 
             if (data.categoria== 'Desing'){
-                desing.push(data)
+                desing ++
+                if(desingList.length <10){
+                    desingList.push(data)
+                }
             }
             else if(data.categoria== 'Programacion'){
-                programacion.push(data)
+                programacion ++;
+                if(programacionList.length <10){
+                    programacionList.push(data)
+                }
+                
             }
         })
-
+        console.log(desing.length >10)
+        console.log(programacion.length >10)
         res.render('index',
             {
                 pageTitle: 'Home',
-                desing: desing,
-                programacion: programacion
+                desing: desingList,
+                programacion: programacionList,
+                allDesing: desing >10,
+                allProgramcion: programacion>10
+
             })
         
 
