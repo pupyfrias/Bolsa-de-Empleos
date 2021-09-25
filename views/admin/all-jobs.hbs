@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+        <button class="btn btn-primary" id="delete">Delete</button>
+        <table class="table table-bordered table-hover mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Location</th>
+            <th scope="col">Company</th>
+            <th scope="col">Position</th>
+            <th scope="col">Editar</th>
+            <th scope="col"><input type="checkbox" id="main-check" value="{{this.id}}"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each datos}}
+        <tr>
+            <td>{{this.location}}</td>
+            <td>{{this.company}}</td>
+            <td>{{this.position}}</td>
+            <td><a class="btn btn-primary" href='/admin/job/{{this.id}}?edit=true'>Edit</a></td>
+            <td><input type="checkbox"  value="{{this.id}}"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+    </div>
+</div>
+

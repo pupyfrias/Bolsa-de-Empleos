@@ -127,3 +127,10 @@
     height: 33px;
 }
 
+.d-inherit{
+    display: inherit !important;
+}
+
+.h-200{
+    height: 200px;
+}

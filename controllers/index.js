@@ -5,7 +5,6 @@ exports.GetIndex = (req, res, next) => {
     jobs.findAll({where:{active:true},order:[['updatedAt','DESC']]}).then(result => {
 
         const resultado = result.map(datos => datos.dataValues)
-        //console.log(resultado)
         let desingList = [];
         let programacionList = [];
         let desing = 0;
@@ -27,8 +26,7 @@ exports.GetIndex = (req, res, next) => {
                 
             }
         })
-        console.log(desing.length >10)
-        console.log(programacion.length >10)
+  
         res.render('index',
             {
                 pageTitle: 'Home',
@@ -39,7 +37,6 @@ exports.GetIndex = (req, res, next) => {
 
             })
         
-
     }).catch(err=>{
         console.log(err)
     })

@@ -6,20 +6,24 @@ const sequelize = require('./utils/database')
 
 const multer = require('multer')
 const {v4:uuidv4} = require("uuid");
+const helpers = require('./utils/helpers/compare')
 
 //ROUTERS
 const index = require('./routers/index')
 const page404 = require('./routers/404')
 const poster = require('./routers/poster')
 const job = require('./routers/job')
+const admin =require('./routers/admin')
 
 //SETTINGS
 
 app.engine('hbs',handlebars(
     {   defaultLayout: 'main-layout',
         layoutsDir: 'views/layout',
-        extname: 'hbs'
-
+        extname: 'hbs',
+        helpers:{
+            compare: helpers.compare
+        }
     }
 ));
 app.set('views',"views");
@@ -44,6 +48,7 @@ app.use(express.urlencoded({extended:false}))
 
 //MIDLEWARES
 app.use(index)
+app.use('/admin',upload,admin)
 app.use('/poster',upload,poster)
 app.use(job)
 
