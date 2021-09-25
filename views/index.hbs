@@ -1,44 +1,61 @@
-
-    <br>
-    <div class="">
-        <input type="text" id="input-search" class="form-control">
-        <button id="btn-Search" name="" class="btn btn-info"><b>Search</b></button>
-        <button id="btn-Post" name="" class="btn btn-info"><a href="anuncio-puesto-de-trabajos.html" id="link-Post"><b>Post a job</b></a></button>
-    </div>
-
-    <h2><img src="https://us.123rf.com/450wm/pytyczech/pytyczech1707/pytyczech170700051/81581133-icono-de-gota-negra-s%C3%ADmbolo-de-aceite-o-agua-ejemplo-plano-simple-del-vector-con-la-sombra-aislada-e.jpg?ver=6" alt="desing.JPG" id="img-desing"><a href="puestos-trabajos-desing.html" id="h2-desing">Desing</a></h2>
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
-            <th>Location</th>
-            <th>Company</th>
-            <th>Position</th>
-
-        </thead>
-
-                 <tr>
-                    <td><p class="card-text">Distrito Nacional, Rep. Dom.</p></td>
-                    <td><p class="card-text">Zerotone Tech.</p></td>
-                    <td><p class="card-text">Progamación</p></td>
-                </tr>
-       </table>
 <br>
-<br>
-<br>
-
-    <h2><img src="https://www.pngitem.com/pimgs/m/174-1746684_java-java-logo-black-png-transparent-png.png" id="img-programming"><a  href="puestos-trabajos-desing.html" id="h2-programming" >Programacion</a></h2>
-    <table class="table table-bordered table-hover">
-        <thead  class="table table-dark">
-            <th>Location</th>
-            <th>Company</th>
-            <th>Position</th>
-        </thead >
-
-                 <tr>
-                    <td><p class="card-text">Distrito Nacional, Rep. Dom.</p></td>
-                    <td><p class="card-text">Zerotone Tech.</p></td>
-                    <td><p class="card-text">Progamación</p></td>
-                </tr>
-    </table>
+<div class="">
+    <input type="text" id="input-search" class="form-control">
+    <button id="btn-Search" name="" class="btn btn-info"><b>Search</b></button>
+    <button id="btn-Post" name="" class="btn btn-info"><a href="anuncio-puesto-de-trabajos.html" id="link-Post"><b>Post
+                a job</b></a></button>
+</div>
 
 
-    
+
+
+
+<h2><img src="https://us.123rf.com/450wm/pytyczech/pytyczech1707/pytyczech170700051/81581133-icono-de-gota-negra-s%C3%ADmbolo-de-aceite-o-agua-ejemplo-plano-simple-del-vector-con-la-sombra-aislada-e.jpg?ver=6"
+        alt="desing.JPG" id="img-desing"><a href='/job/all/desing'> Desing</h2></a>
+
+
+<table class="table table-bordered table-hover mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Location</th>
+            <th scope="col">Company</th>
+            <th scope="col">Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each desing}}
+        <tr class='clickable-row' data-href='/job/{{this.id}}'>
+            <td>{{this.location}}</td>
+            <td>{{this.company}}</td>
+            <td>{{this.position}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{#if allDesing}}
+<a href="job/all/desing">See more jobs</a>
+{{/if}}
+
+<h2><img src="https://www.pngitem.com/pimgs/m/174-1746684_java-java-logo-black-png-transparent-png.png"
+        id="img-programming"><a href="/job/all/programacion"> Programacion</a></h2>
+<table class="table table-bordered table-hover mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Location</th>
+            <th scope="col">Company</th>
+            <th scope="col">Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each programacion}}
+        <tr class='clickable-row' data-href='/job/{{this.id}}'>
+            <td>{{this.location}}</td>
+            <td>{{this.company}}</td>
+            <td>{{this.position}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{#if allProgramcion}}
+<a href="job/all/programacion">See more jobs</a>
+{{/if}}

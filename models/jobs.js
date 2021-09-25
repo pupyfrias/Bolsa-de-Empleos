@@ -35,6 +35,11 @@ const jobs = conenxion.define("jobs",{
         type: Sequelize.STRING,
         allowNull: false
     }
+    ,
+    active:{
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+    }
 });
 
 module.exports = jobs;

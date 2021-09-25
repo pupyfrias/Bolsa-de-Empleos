@@ -11,6 +11,7 @@ const {v4:uuidv4} = require("uuid");
 const index = require('./routers/index')
 const page404 = require('./routers/404')
 const poster = require('./routers/poster')
+const job = require('./routers/job')
 
 //SETTINGS
 
@@ -44,6 +45,7 @@ app.use(express.urlencoded({extended:false}))
 //MIDLEWARES
 app.use(index)
 app.use('/poster',upload,poster)
+app.use(job)
 
 
 app.use(page404)
