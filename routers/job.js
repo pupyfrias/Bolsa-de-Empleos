@@ -3,7 +3,7 @@ const router = express()
 const job = require('../controllers/job')
 
 router.get('/job/:id',job.GetJob)
-router.get('/job/all/desing',job.GetAllDesing)
-router.get('/job/all/programacion',job.GetAllProgramacion)
+router.get('/job/all/:categoria',job.GetAllJobs)
+
 
 module.exports = router

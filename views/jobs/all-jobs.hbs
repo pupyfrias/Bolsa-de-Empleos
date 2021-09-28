@@ -1,8 +1,8 @@
-{{#if activeProgramacion}}
+{{#if (compare 'Programacion' categoria)}}
 <h2><img src="https://www.pngitem.com/pimgs/m/174-1746684_java-java-logo-black-png-transparent-png.png"
         id="img-programming">Programacion</h2>
 {{/if}}
-{{#if activeDesing}}
+{{#if (compare 'Desing' categoria)}}
 <h2><img src="https://us.123rf.com/450wm/pytyczech/pytyczech1707/pytyczech170700051/81581133-icono-de-gota-negra-s%C3%ADmbolo-de-aceite-o-agua-ejemplo-plano-simple-del-vector-con-la-sombra-aislada-e.jpg?ver=6"
         alt="desing.JPG" id="img-desing">Desing</h2>
 {{/if}}
@@ -26,3 +26,53 @@
         {{/each}}
     </tbody>
 </table>
+{{#if activePagination}}
+<nav aria-label="Page navigation example" class="mt-5">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {{#if (compare page 1)}}disabled{{/if}}">
+            <a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {{#if (compare page 1)}}
+            {{#if (compare last 2)}}
+                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
+            {{else}} 
+                <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
+                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 2}}{{else}}{{url}}?page={{sum page 2}}{{/if}}">{{sum page 2}}</a></li>
+            {{/if}}
+       
+        {{else}}
+
+             {{#if (compare page last)}}
+                {{#if (compare page 2)}}
+                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                {{else}}
+                        <li class="page-item "><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 2}}{{else}}{{url}}?page={{min page 2}}{{/if}}">{{min page 2}}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                {{/if}}
+            {{else}}
+                {{#if (compare last 2)}}
+                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                {{else}} 
+                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
+                {{/if}}
+        {{/if}}
+        {{/if}}
+
+        <li class="page-item {{#if (compare page last)}}disabled{{/if}}">
+            <a class="page-link " href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{{/if}}
+

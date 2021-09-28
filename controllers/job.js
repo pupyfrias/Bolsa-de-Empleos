@@ -1,4 +1,6 @@
 const jobs = require('../models/jobs')
+const {Op} =require('sequelize')
+
 
 exports.GetJob = (req,res,next)=>{
 
@@ -17,30 +19,46 @@ exports.GetJob = (req,res,next)=>{
     
 }
 
-exports.GetAllDesing = (req,res,next)=>{
+exports.GetAllJobs = (req,res,next)=>{
+    let {search,page} = req.query
+    let {categoria} = req.params
 
-    jobs.findAll({where:{categoria:'Desing', active:true},order:[['updatedAt','DESC']]})
+    categoria = categoria.charAt(0).toUpperCase() + categoria.substr(1).toLowerCase();
+    let limit =20
+    page = page!= undefined? page-1:0 
+    search = search!=undefined?search:''
+    let url = new URL('https://pupy.com'+req.url)
+    url.searchParams.delete('page')
+    url = url.pathname+url.search
+
+    jobs.findAndCountAll({where:{categoria:categoria, active:true,
+                [Op.or]:[{categoria:{[Op.substring]:search}},
+                {type:{[Op.substring]:search}},
+                {company:{[Op.substring]:search}},
+                {position:{[Op.substring]:search}},
+                {location:{[Op.substring]:search}},
+                {description:{[Op.substring]:search}}
+                ]},order:[['updatedAt','DESC']],
+                limit:limit,
+                offset: page*limit
+            })
     .then(result=>{
-        const datos = result.map(result=> result.dataValues)
-        res.render('jobs/all-jobs',{
-            pageTitle: "All Desing Jobs",
-            datos: datos,
-            activeDesing: true
-        })
-    }).catch(err=>{
-        console.log(err)
-    })
-}
+        
+        const datos = result.rows.map(result=> result.dataValues)
+        let last = result.count/limit
+        last = Number.isInteger(last)?last: parseInt(last)+1
 
-exports.GetAllProgramacion = (req,res,next)=>{
-
-    jobs.findAll({where:{categoria:'Programacion', active:true},order:[['updatedAt','DESC']]})
-    .then(result=>{
-        const datos = result.map(result=> result.dataValues)
         res.render('jobs/all-jobs',{
-            pageTitle: "All Programacion Jobs",
+            pageTitle: `All ${categoria} Jobs`,
             datos: datos,
-            activeProgramacion: true
+            activeSearch: true,
+            search:search,
+            categoria: categoria,
+            page: page+1,
+            last: last,
+            activePagination: last>1,
+            url:url,
+            hasParams: url.includes('?')
         })
     }).catch(err=>{
         console.log(err)

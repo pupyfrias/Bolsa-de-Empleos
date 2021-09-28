@@ -1,8 +1,20 @@
 const jobs = require('../models/jobs')
+const {Op} = require('sequelize')
 
-exports.GetIndex = (req, res, next) => {
+exports.GetIndex = async(req, res, next) => {
+    
+    
 
-    jobs.findAll({where:{active:true},order:[['updatedAt','DESC']]}).then(result => {
+    let {search} = req.query
+    search = search!=undefined?search:''
+    jobs.findAll({where:{active:true, 
+        [Op.or]:[{categoria:{[Op.substring]:search}},
+                {type:{[Op.substring]:search}},
+                {company:{[Op.substring]:search}},
+                {position:{[Op.substring]:search}},
+                {location:{[Op.substring]:search}},
+                {description:{[Op.substring]:search}}
+            ]},order:[['updatedAt','DESC']]}).then(result => {
 
         const resultado = result.map(datos => datos.dataValues)
         let desingList = [];
@@ -33,7 +45,9 @@ exports.GetIndex = (req, res, next) => {
                 desing: desingList,
                 programacion: programacionList,
                 allDesing: desing >10,
-                allProgramcion: programacion>10
+                allProgramcion: programacion>10,
+                search:search,
+                activeSearch: true
 
             })
         

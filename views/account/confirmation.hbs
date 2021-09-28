@@ -1,0 +1,26 @@
+{{#if errorCode}}<div class="alert"><div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <ul>
+        {{#if invalidate}}<li><strong>Código incorrecto</strong></li> {{/if}}
+        {{#if expiration}}<li><strong>Código expirado, inténtelo de nuevo</strong></li> {{/if}}
+        </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div></div>{{/if}}
+<div class="center">
+
+
+
+{{#if expiration}}
+<form action="/new-code" method="post">
+<input type="hidden" value="{{id}}" name="id">
+<input type="hidden" value="{{email}}" name="email">
+<input type="submit" value="Enviar de nuevo" class="btn btn-primary">
+</form>
+{{else}}
+<p>Ingresa el código que enviamos a tu correo para combirmar tu cuenta</p>
+<form action="/confirmation" method="post">
+<input type="text" name="code"{{#if errorCode}} value="{{code}}"{{/if}}>
+<input type="submit" value="enviar" class="btn btn-primary">
+</form>
+{{/if}}
+</div>
+

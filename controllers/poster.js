@@ -13,7 +13,7 @@ exports.GetPosterJob =(req,res,next)=>{
 }
 
 exports.PostPosterJob = (req,res,next)=>{
-    const {categoria,type,company,url,position,location,description} = req.body;
+    const {categoria,type,company,url,position,location,description,email} = req.body;
     let logo = req.file!= undefined? '/'+req.file.path: ''
 
     jobs.create({
@@ -25,9 +25,13 @@ exports.PostPosterJob = (req,res,next)=>{
         position:position,
         location:location,
         description:description,
-        active: true
+        active: true,
+        email:email
+    }).then(()=>{
+        req.flash('alert','Trabajo creado correctamente')
+        res.redirect('/poster')
     }).catch(err=>{
         console.log(err)
     })
-    res.render('poster/post-jobs')
+    
 }

@@ -39,6 +39,10 @@ const jobs = conenxion.define("jobs",{
     active:{
         type: Sequelize.BOOLEAN,
         allowNull: false
+    },
+    email:{
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

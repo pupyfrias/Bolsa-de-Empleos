@@ -18,10 +18,32 @@ $(document).ready(function(){
         window.location = '/admin/job/delete/'+list
     })
 
-    $('#main-check').click(function(){
-        $('input[type=checkbox]').prop('checked',$(this).prop('checked'))
-        
+    $('#main-check').click( function(){
+        $('input[type=checkbox]:not(#check-desing,#check-pragramacion)').prop('checked',$(this).prop('checked'))
+          
+    })
+
+    $('#btn-Search').click(function(){
+        const url = window.location.pathname
+
+        window.location = url+'?search='+$('#input-search').val()
     })
     
+    $('#login').click(function(){
+        let url = window.location.pathname!= '/'?'/login?redirect='+window.location.pathname+window.location.search:'/login'
+        window.location = url
+    })
+
+    $('#check-desing').click(function(){
+        
+        let url = window.location.search ? window.location.pathname+
+        window.location.search+'&desing=disable': location.pathname+'?desing=disable'
+        window.location = url
+    })
+    $('#check-pragramacion').click(function(){
+        let url = window.location.search ? window.location.pathname+
+        window.location.search+'&programacion=disable': location.pathname+'?programacion=disable'
+        window.location = url
+    })
 
 })
