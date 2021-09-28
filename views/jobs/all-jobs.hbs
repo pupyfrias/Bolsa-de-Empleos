@@ -7,7 +7,8 @@
         alt="desing.JPG" id="img-desing">Desing</h2>
 {{/if}}
 
-
+    
+<br>
 <table class="table table-bordered table-hover mt-4">
     <thead class="table-dark">
         <tr>
@@ -18,7 +19,7 @@
     </thead>
     <tbody>
         {{#each datos}}
-        <tr class='clickable-row' data-href='/job/{{this.id}}'>
+        <tr class='clickable-row' data-href='/job/{{this.id}}' style="cursor: pointer;">
             <td>{{this.location}}</td>
             <td>{{this.company}}</td>
             <td>{{this.position}}</td>
