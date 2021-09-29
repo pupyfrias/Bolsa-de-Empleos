@@ -1,0 +1,53 @@
+{{#if error}}<div class="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <ul>
+            {{#if exitsUser}}
+            <li>
+                <strong>Ya existe un usuario con ese nombre de usuario</strong> 
+            </li>
+            {{/if}}
+            {{#if exitsEmail}}
+            <li>
+                <strong>Ya existe un usuario con ese email</strong>    
+            </li>
+            {{/if}}
+        </ul>
+
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>{{/if}}
+
+<main class="container">
+		<div class="card">
+			<div class="card-body">
+				<form action="/create-account" method="post">
+					<h2 class="modal-title" id="h2-post">POST JOBS</h2>
+						<hr  />
+					<div class="mb-3">
+						<label for="name">Name:</label>
+						<input class="form-control" type="text" name="name" required value="{{name}}">
+					</div>
+					<div class="mb-3">
+						<label for="lastname">Lastname:</label>
+						<input class="form-control" type="text" name="lastname" id="input-logo" required value="{{lastname}}">
+					</div>
+					<div class="mb-3">
+						<label for="username">Username:</label>
+						<input class="form-control" type="text" name="username" required value="{{username}}" {{#if exitsUser}} class="border-danger" {{/if}}>
+					</div>
+					<div class="mb-3">
+						<label for="password">Password:</label>
+						<input class="form-control" type="password" name="password" required value="{{password}}">
+					</div>
+					<div class="mb-3">
+						<label for="email">Email:</label>
+						<input class="form-control" type="email" name="email" required value="{{email}}" {{#if exitsEmail}} class="border-danger" {{/if}}>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-info" id="boton-post"><b>Enviar</b></button>
+					</div>
+				</form>
+		</div>
+	</div>
+</main>
