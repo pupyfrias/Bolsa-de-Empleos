@@ -1,120 +1,64 @@
-<<<<<<< HEAD
-    <h2 id="h2-post">POST JOBS</h2>
-<br>
-    <form enctype="multipart/form-data" action="/poster" method="POST" class="form-control" >
-        <label for="Combox-Categoria" id="post-label-categoria" class="custom-select">Categoria</label>
-        <select name="categoria" id="Combox-Categoria" required>
-                <option value="">Select an Option</option>
-            <option value="Desing" >Desing</option>
-            <option value="Programacion">Programacion</option>
-        </select>
-<br>     
-<br> 
-        <label for="" id="type-post" >Type</label>
-        <input type="radio" name="type" value="Full Time" required >Full Time
-        <input type="radio" name="type" value="Part Time" required>Part Time
-        <input type="radio" name="type" value="Freelance" required >Freelance
-<br>
-<br>   
-        <label for="" id="company-post">Company</label>
-        <input type="text" name="company" id="input-company" required>
-<br>
-<br>   
-        <label for="" id="logo-post">Logo</label>
-        <input type="file" name="logo" id="input-logo">
-<br>
-<br>
-
-        <label for="" id="url-post">URL</label>
-        <input type="text" name="url" id="input-url">
-<br>
-<br>
-
-        <label for="" id="position-post">Position</label>
-        <input type="text" id="input-position" name="position" required>  
-<br>
-<br>   
-        <label for="" id="location-post">Location</label>
-        <input type="text" name="location" id="input-location" required> 
-<br>
-<br>   
-        <label for="" id="description-post">Description</label>
-    
-<br>
-<br>   
-        <textarea name="description" id="textarea-post" cols="30" rows="10"  required ></textarea>
-<br>
-<br>
-<br>
-<br>
-        <input type="hidden" name="email" value="{{email}}">
-        <button type="submit" class="btn btn-info" id="boton-post"><b>Enviar</b></button>
-    </form>
-
-
-=======
->>>>>>> 06081c2141b667b3c44f4607afe5451894330dca
-
-    <main class="container">
-<div class="row">
-                <div class="col-md-6 mt-5">
-                    <input class="form-control" type="text" placeholder="Ingrese aquí su búsqueda.">
-                </div>
-                <div class="col-md-4 mt-3 ">
-                    <button class="btn btn-primary " id="btn-Search">Search</button>
-                </div>
-                <div class="col-md-2 mt-5" >
-                    <button class="btn btn-danger" id="btn-Post">Post a job</button>
-                </div>
-            </div>
-		<div class="row">
-			<div class="card">
-				<div class="card-body">                                
-					<h2 class="modal-title">Post a job</h2>
-						<hr  />
-					<form enctype="multipart/form-data" action="/poster" method="POST" >
-							<div class="mb-3">
-							<label for="Combox-Categoria">Categoria:</label>
-								<select class="form-select" name="categoria" id="Combox-Categoria" required>
-								<option value="">Select an Option</option>
-								<option value="Desing" >Desing</option>
-								<option value="Programacion">Programacion</option>
-							</select>
-						</div>
-						<div class="mb-3">
-							<label for="">Type:</label>
-							<input class="form-check-input" type="radio" name="type" value="Full Time" required>Full Time
-								<input class="form-check-input" type="radio" name="type" value="Part Time" required>Part Time
-								<input class="form-check-input" type="radio" name="type" value="Freelance" required>Freelance
-						</div>
-						<div class="mb-3">
-							<label for="">Company:</label>
-							<input class="form-control" type="text" name="company" id="input-company" required>
-						</div>
-						<div class="mb-3">
-							<label for="">Logo:</label>
+<main class="container">
+	<div class="row">
+		<div class="col-md-6 mt-5">
+			<input class="form-control" type="text" placeholder="Ingrese aquí su búsqueda.">
+		</div>
+		<div class="col-md-4 mt-3 ">
+			<button class="btn btn-primary " id="btn-Search">Search</button>
+		</div>
+		<div class="col-md-2 mt-5">
+			<button class="btn btn-danger" id="btn-Post">Post a job</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="card">
+			<div class="card-body">
+				<h2 class="modal-title">Post a job</h2>
+				<hr />
+				<form enctype="multipart/form-data" action="/poster" method="POST">
+					<div class="mb-3">
+						<label for="Combox-Categoria">Categoria:</label>
+						<select class="form-select" name="categoria" id="Combox-Categoria" required>
+							<option value="">Select an Option</option>
+							<option value="Desing">Desing</option>
+							<option value="Programacion">Programacion</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="">Type:</label>
+						<input class="form-check-input" type="radio" name="type" value="Full Time" required>Full Time
+						<input class="form-check-input" type="radio" name="type" value="Part Time" required>Part Time
+						<input class="form-check-input" type="radio" name="type" value="Freelance" required>Freelance
+					</div>
+					<div class="mb-3">
+						<label for="">Company:</label>
+						<input class="form-control" type="text" name="company" id="input-company" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Logo:</label>
 						<input class="form-control" type="file" accept=".jpg, .png" name="logo" id="input-logo">
-						</div>
-						<div class="mb-3">
-							<label for="">URL:</label>
-							<input class="form-control" type="text" name="url" id="input-url">
-                              </div>
-						<div class="mb-3">
-							<label for="">Position:</label>
-							<input class="form-control" type="text" id="input-position" name="position" required>  
-						</div>
-						<div class="mb-3">
-								<label for="">Location:</label>
-								<input class="form-control" type="text" name="location" id="input-location" required> 
-						</div>
-						<div class="mb-3">
-							<label for="">Description:</label><br  />
-							<textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
-						</div>
-						<div class="modal-footer">
-								<button class="btn btn-primary" type="submit">Publicar</button>
-						</div>                
-					</form>
-				</div>
+					</div>
+					<div class="mb-3">
+						<label for="">URL:</label>
+						<input class="form-control" type="text" name="url" id="input-url">
+					</div>
+					<div class="mb-3">
+						<label for="">Position:</label>
+						<input class="form-control" type="text" id="input-position" name="position" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Location:</label>
+						<input class="form-control" type="text" name="location" id="input-location" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Description:</label><br />
+						<textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" name="email" value="{{email}}">
+						<button class="btn btn-primary" type="submit">Publicar</button>
+					</div>
+				</form>
 			</div>
 		</div>
+	</div>

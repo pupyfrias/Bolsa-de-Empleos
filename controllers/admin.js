@@ -1,32 +1,55 @@
 const jobs = require('../models/jobs')
 const categarias = require('../models/categorias')
 const { Op } = require('sequelize')
+const fs = require('fs')
+const path = require('path')
+
 
 exports.GetAllJobs =  (req, res, next) => {
     let { search, desing, programacion } = req.query
     search = search != undefined ? search : ''
     if (desing) {
 
-        console.log('//////////')
-        console.log('dising')
+        if(desing =='disable'){
 
-        categarias.update({ enable: false },
-            { where: { categoria: 'desing' } }).catch(err => {
-                console.log(err)
-            })
+            categarias.update({ enable: false },
+                { where: { categoria: 'desing' } }).catch(err => {
+                    console.log(err)
+                })
+        }else{
+            categarias.update({ enable: true },
+                { where: { categoria: 'desing' } }).catch(err => {
+                    console.log(err)
+                })
+        }
+        
     }
     if (programacion) {
 
-        console.log('//////////')
-        console.log('programacion')
-        categarias.update({ enable: false },
-            { where: { categoria: 'programacion' } }).catch(err => {
-                console.log(err)
-            })
+        if(programacion =='disable'){
+
+            categarias.update({ enable: false },
+                { where: { categoria: 'programacion' } }).catch(err => {
+                    console.log(err)
+                })
+        }
+        else{
+            categarias.update({ enable: true },
+                { where: { categoria: 'programacion' } }).catch(err => {
+                    console.log(err)
+                })
+
+        }
+       
     }
+    fs.readFile(path.join(__dirname,'../utils/pagination.txt'), 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+       let limit= parseInt(data)
 
-
-    jobs.findAll({
+       jobs.findAll({
         where: {
             [Op.or]: [{ categoria: { [Op.substring]: search } },
             { type: { [Op.substring]: search } },
@@ -52,7 +75,8 @@ exports.GetAllJobs =  (req, res, next) => {
                 search: search,
                 activeSearch: true,
                 enableDesing: datos2[0].enable,
-                enableProgramacion: datos2[1].enable
+                enableProgramacion: datos2[1].enable,
+                limit:limit
             })
         }).catch(err => {
             console.log(err)
@@ -61,6 +85,11 @@ exports.GetAllJobs =  (req, res, next) => {
     }).catch(err => {
         console.log(err)
     })
+    
+    })
+
+
+    
 }
 
 exports.GetEditJob = (req, res, next) => {
@@ -112,5 +141,19 @@ exports.GetDeleteJob = (req, res, next) => {
         res.redirect('/admin/job/all')
     }).catch(err => {
         console.log(err)
+    })
+}
+
+exports.GetLimit =(req,res,next)=>{
+
+    const limit = req.params.id
+
+    fs.writeFile(path.join(__dirname,'../utils/pagination.txt'), limit , (err) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+
+        res.redirect('/admin/job/all')
     })
 }

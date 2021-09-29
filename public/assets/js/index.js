@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    let url = new URL(window.location.href)
+    let params = new URLSearchParams(window.location.search);
+
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
     });
@@ -11,11 +14,19 @@ $(document).ready(function(){
     })
 
     $('#delete').click(function(){
+
         let list = []
-        $('input[type=checkbox]:checked').each(function(){
-            list.push($(this).val())
-        })
-        window.location = '/admin/job/delete/'+list
+        let confirmacion = confirm("Seguro que desea continuar con la eliminacion")
+        
+        if (confirmacion ==true){
+
+            $('input[type=checkbox]:checked:not(#check-desing,#check-pragramacion)').each(function(){
+                list.push($(this).val())
+            })
+            window.location = '/admin/job/delete/'+list
+        }
+        
+       
     })
 
     $('#main-check').click( function(){
@@ -36,14 +47,38 @@ $(document).ready(function(){
 
     $('#check-desing').click(function(){
         
-        let url = window.location.search ? window.location.pathname+
-        window.location.search+'&desing=disable': location.pathname+'?desing=disable'
+        if($(this).is(':checked')){
+            
+            params.set('desing','enable')
+            url = url.pathname+'?'+params.toString()
+         
+        }
+        else{
+
+            params.set('desing','disable')
+            url = url.pathname+'?'+params.toString()
+        }
+        
+        
         window.location = url
     })
     $('#check-pragramacion').click(function(){
-        let url = window.location.search ? window.location.pathname+
-        window.location.search+'&programacion=disable': location.pathname+'?programacion=disable'
+
+        if($(this).is(':checked')){
+            
+            params.set('programacion','enable')
+            url = url.pathname+'?'+params.toString()
+         
+        }
+        else{
+
+            params.set('programacion','disable')
+            url = url.pathname+'?'+params.toString()
+        }
         window.location = url
     })
+    $('#guardar').click(function(){
 
+        window.location = './limit/'+$('#pagination').val()
+    })
 })

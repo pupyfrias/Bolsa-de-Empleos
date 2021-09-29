@@ -34,11 +34,19 @@
     </nav>
     {{#if activeSearch}}
     <div class="m-5">
-        <input type="search" id="input-search" name="search" class="form-control" value="{{search}}">
-        <button id="btn-Search" class="btn btn-info"><b>Search</b></button>
-        <button id="btn-Post" class="btn btn-info"><a href="/poster" id="link-Post"><b>Post
-                    a job</b></a></button>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="Ingrese aquí su búsqueda.">
+            </div>
+            <div class="col-md-4 ">
+                <button class="btn btn-primary " id="btn-Search">Search</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger" id="btn-Post">Post a job</button>
+            </div>
+        </div>
     </div>
+
     {{/if}}
     <div class="m-5">
         {{#if hasAlert}}

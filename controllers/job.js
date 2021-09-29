@@ -1,5 +1,7 @@
 const jobs = require('../models/jobs')
 const {Op} =require('sequelize')
+const fs = require('fs')
+const path = require('path')
 
 
 exports.GetJob = (req,res,next)=>{
@@ -24,13 +26,22 @@ exports.GetAllJobs = (req,res,next)=>{
     let {categoria} = req.params
 
     categoria = categoria.charAt(0).toUpperCase() + categoria.substr(1).toLowerCase();
-    let limit =20
+    let limit = 0
     page = page!= undefined? page-1:0 
     search = search!=undefined?search:''
     let url = new URL('https://pupy.com'+req.url)
     url.searchParams.delete('page')
     url = url.pathname+url.search
+ 
 
+    fs.readFile(path.join(__dirname,'../utils/pagination.txt'), 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        limit= parseInt(data)
+
+        console.log(limit)
     jobs.findAndCountAll({where:{categoria:categoria, active:true,
                 [Op.or]:[{categoria:{[Op.substring]:search}},
                 {type:{[Op.substring]:search}},
@@ -63,4 +74,7 @@ exports.GetAllJobs = (req,res,next)=>{
     }).catch(err=>{
         console.log(err)
     })
+
+      })
+    
 }
