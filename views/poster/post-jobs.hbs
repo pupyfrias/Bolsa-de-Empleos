@@ -1,5 +1,4 @@
 <main class="container">
-	
 	<div class="row">
 		<div class="card">
 			<div class="card-body">
@@ -7,7 +6,7 @@
 				<hr />
 				<form enctype="multipart/form-data" action="/poster" method="POST">
 					<div class="mb-3">
-						<label for="Combox-Categoria">Categoria:</label>
+						<label for="Combox-Categoria">Category:</label>
 						<select class="form-select" name="categoria" id="Combox-Categoria" required>
 							<option value="">Select an Option</option>
 							<option value="Desing">Desing</option>
@@ -46,7 +45,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="hidden" name="email" value="{{email}}">
-						<button class="btn btn-primary" type="submit">Publicar</button>
+						<button class="btn btn-primary" type="submit">Post</button>
 					</div>
 				</form>
 			</div>
