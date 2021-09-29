@@ -70,6 +70,8 @@ exports.PostCreateAccout = (req,res,next)=>{
                     to: email,
                     subject: 'Código de confirmación',
                     html: msj
+                }).catch(err=>{
+                    console.log(err)
                 })
 
                 res.render('account/confirmation',{
