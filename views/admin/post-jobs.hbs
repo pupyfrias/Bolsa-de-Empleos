@@ -1,70 +1,68 @@
-
-<h2 id="h2-post">POST JOBS</h2>
-<br>
-<form enctype="multipart/form-data" action="/admin/poster/{{datos.id}}" method="POST" class="form-control">
-        <label for="Combox-Categoria" id="post-label-categoria" class="custom-select">Categoria</label>
-        <select name="categoria" id="Combox-Categoria" required>
-                <option value="">Select an Option</option>
-                <option value="Desing" {{#if (compare datos.categoria 'Desing' )}}selected{{/if}}>Desing</option>
-                <option value="Programacion" {{#if (compare datos.categoria 'Programacion' )}}selected{{/if}}>
-                        Programacion</option>
-        </select>
-        <br>
-        <br>
-        <label for="" id="type-post">Type</label>
-        <input type="radio" name="type" value="Full Time" {{#if (compare datos.type "Full Time" )}}checked{{/if}}
-                required>Full Time
-        <input type="radio" name="type" value="Part Time" {{#if (compare datos.type "Part Time" )}}checked{{/if}}
-                required>Part Time
-        <input type="radio" name="type" value="Freelance" {{#if (compare datos.type "Freelance" )}}checked{{/if}}
-                required>Freelance
-        <br>
-        <br>
-        <label for="" id="company-post">Company</label>
-        <input type="text" name="company" id="input-company" value="{{datos.company}}" required>
-        <br>
-        <br>
-        <label for="" id="logo-post">Logo</label>
-        <div class="mt-3" id="image-contaner">
-                {{#if (compare datos.logo "" )}}
-                <input type="file" name="logo" id="input-logo">
-                {{else}}
-
-                <img id="image" src="{{datos.logo}}" class="h-200">
-                <input type="hidden" name="oldLogo" value="{{datos.logo}}">
-                <button class="btn btn-danger d-inherit mt-2" type="button" id="eliminar">eliminar</button>
-
-                {{/if}}
-        </div>
-
-        <br>
-        <br>
-
-        <label for="" id="url-post">URL</label>
-        <input type="text" name="url" id="input-url" value="{{datos.url}}">
-        <br>
-        <br>
-
-        <label for="" id="position-post">Position</label>
-        <input type="text" id="input-position" name="position" value="{{datos.position}}" required>
-        <br>
-        <br>
-        <label for="" id="location-post">Location</label>
-        <input type="text" name="location" id="input-location" value="{{datos.location}}" required>
-        <br>
-        <br>
-        <label for="" id="description-post">Description</label>
-
-        <br>
-        <br>
-        <textarea name="description" id="textarea-post" cols="30" rows="10" required>{{datos.description}}</textarea>
-        <br>
-        <label for="radio" id="type-post">Status</label>
-        <input type="radio" name="active" value="true" required {{#if  datos.active }}checked{{/if}}>Eneble
-        <input type="radio" name="active" value="false" required {{#if  datos.active }}{{else}}checked{{/if}}>Diseble
-        <br>
-        <br>
-        <br>
-        
-        <button type="submit" class="btn btn-info" id="boton-post"><b>Enviar </b></button>
-</form>
+<main class="container">
+	<div class="row">
+		<div class="card">
+			<div class="card-body">
+				<h2 class="modal-title" id="h2-post">POST JOBS</h2>
+					<hr  />
+				<form enctype="multipart/form-data" action="/admin/poster/{{datos.id}}" method="POST">
+					<div class="mb-3">
+						<label for="Combox-Categoria" id="post-label-categoria" class="custom-select">Category:</label>
+						<select class="form-select" name="categoria" id="Combox-Categoria" required>
+							<option value="">Select an Option</option>
+							<option value="Desing" {{#if (compare datos.categoria 'Desing' )}}selected{{/if}}>Desing</option>
+							<option value="Programacion" {{#if (compare datos.categoria 'Programacion' )}}selected{{/if}}>Programacion</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="" id="type-post">Type:</label>
+						<input class="form-check-input" type="radio" name="type" value="Full Time" {{#if (compare datos.type "Full Time" )}}checked{{/if}} required>Full Time
+						<input class="form-check-input" type="radio" name="type" value="Part Time" {{#if (compare datos.type "Part Time" )}}checked{{/if}} required>Part Time
+						<input class="form-check-input" type="radio" name="type" value="Freelance" {{#if (compare datos.type "Freelance" )}}checked{{/if}} required>Freelance
+					</div>
+					<div class="mb-3">
+						<label for="" id="company-post">Company:</label>
+						<input class="form-control" type="text" name="company" id="input-company" value="{{datos.company}}" required>
+					</div>
+					<div class="mb-3">
+						<label for="" id="logo-post">Logo:</label>
+						<div class="mt-3" id="image-contaner">
+								{{#if (compare datos.logo "" )}}
+								<input type="file" name="logo" id="input-logo">
+								{{else}}
+				
+								<img id="image" src="{{datos.logo}}" class="h-200">
+								<input type="hidden" name="oldLogo" value="{{datos.logo}}">
+								<button class="btn btn-danger d-inherit mt-2" type="button" id="eliminar">eliminar</button>
+				
+								{{/if}}
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="" id="url-post">URL:</label>
+						<input class="form-control" type="text" name="url" id="input-url" value="{{datos.url}}">
+					</div>
+					<div class="mb-3">
+						<label for="" id="position-post">Position:</label>
+						<input class="form-control" type="text" id="input-position" name="position" value="{{datos.position}}" required>
+					</div>
+					<div class="mb-3">
+						<label for="" id="location-post">Location:</label>
+						<input class="form-control" type="text" name="location" id="input-location" value="{{datos.location}}" required>
+					</div>
+					<div class="mb-3">
+						<label for="" id="description-post">Description:</label><br  />
+						<textarea class="form-control" name="description" id="" cols="30" rows="10" required>{{datos.description}}</textarea>
+					</div>
+					<div class="mb-3">
+						<label for="radio" id="type-post">Status:</label>
+						<input class="form-check-input"  type="radio" name="active" value="true" required {{#if  datos.active }}checked{{/if}}>Eneble
+						<input class="form-check-input" type="radio" name="active" value="false" required {{#if  datos.active }}{{else}}checked{{/if}}>Diseble
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-info" id="boton-post"><b>Enviar </b></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
