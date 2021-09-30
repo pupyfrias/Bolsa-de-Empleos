@@ -37,6 +37,7 @@ app.engine('hbs',handlebars(
             compare: helpers.compare,
             sum: helpers.sum,
             min: helpers.min,
+            date: helpers.date
         }
     }
 ));
@@ -59,6 +60,7 @@ const upload = multer({storage: fileStorage}).single("logo");
 app.use(express.urlencoded({extended:false}))
 app.use(session({secret:'anything',resave:true,saveUninitialized:false}))
 app.use(flash())
+
 
 
 

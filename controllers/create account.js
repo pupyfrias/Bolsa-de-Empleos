@@ -66,7 +66,7 @@ exports.PostCreateAccout = (req,res,next)=>{
                 <strong>${codigo}</strong>, este código 5 minutos de vigencia.`
                 
                 mailer.sendMail({
-                    from: "bryantsantana139@gmail.com",
+                    from: "radhamesenc2412002@gmail.com",
                     to: email,
                     subject: 'Código de confirmación',
                     html: msj
