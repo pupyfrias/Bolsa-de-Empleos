@@ -1,30 +1,29 @@
- {{#if error}}<div class="alert"><div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <ul>
+{{#if error}}<div class="alert"><div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <ul>
         {{#if errorUser}}<li><strong>Usuario incorrecto</strong></li> {{/if}}
         {{#if errorPassword}}<li><strong>Contraseña incorrecta</strong></li> {{/if}}
-        </ul>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div></div>{{/if}}
 {{#if messages}}
-<div class="alert"><div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>La Cuenta fue creada correctamente</strong>
-      
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	<div class="alert"><div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>La Cuenta fue creada correctamente</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div></div>
-
 {{/if}}
 <div class="login" id="ds">
     <div class="login-triangle"></div>
     <h2 class="login-header">Log in</h2>
-   
     <form class="login-container" method="POST" action="/login">
-        <input type="text" placeholder="Username" name="username" {{#if error}}value="{{username}}"
-            class="border-danger" {{/if}} required>
-        <input type="password" placeholder="Password" name="password" {{#if error}}value="{{password}}"
-            class="border-danger" {{/if}} required>
+        <input type="text" placeholder="Username" name="username" {{#if error}}value="{{username}}" class="border-danger" {{/if}} required>
+        <input type="password" placeholder="Password" name="password" {{#if error}}value="{{password}}" class="border-danger" {{/if}} required>
         <input type="hidden" name="url" id="url" value="{{#if wasRedirect}}/poster{{else}}{{redirect}}{{/if}}">
-
         <input type="submit">
     </form>
+	<br  />
+	<div class="center">
+		<div class="card">
+			<p>¿No tienes una cuenta? <a href="/create-account">Crea una cuenta aquí</a>.</p>
+		</div>
+	</div>
 </div>
-<div class="center"><a href="/create-account">Crear una cuenta</a></div>
