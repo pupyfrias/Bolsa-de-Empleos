@@ -24,17 +24,15 @@
 						<input class="form-control" type="text" name="company" id="input-company" value="{{datos.company}}" required>
 					</div>
 					<div class="mb-3">
-						<label for="" id="logo-post">Logo:</label>
 						<div class="mt-3" id="image-contaner">
-								{{#if (compare datos.logo "" )}}
-								<input type="file" name="logo" id="input-logo">
-								{{else}}
-				
+							<label for="" id="logo-post">Logo:</label>
+							{{#if (compare datos.logo "" )}}
+								<input type="file" class="form-control" accept=".jpg, .png" name="logo" id="input-logo">
+							{{else}}
 								<img id="image" src="{{datos.logo}}" class="h-200">
 								<input type="hidden" name="oldLogo" value="{{datos.logo}}">
 								<button class="btn btn-danger d-inherit mt-2" type="button" id="eliminar">eliminar</button>
-				
-								{{/if}}
+							{{/if}}
 						</div>
 					</div>
 					<div class="mb-3">
