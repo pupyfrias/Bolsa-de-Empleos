@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-7">
                         <h2 class="card-text"><b>{{datos.company}}</b></h2> <!-- Aquí va el nombre de la compañía reclutante. -->
-                        <p class="card-text">{{datos.location}}.</p> <!-- Aquí el lugar de ubicación de las oficinas. -->
+                        <p class="card-text">{{datos.location}}</p> <!-- Aquí el lugar de ubicación de las oficinas. -->
                             <hr  />
-                        <p class="card-text">{{datos.type}}, {{datos.position}}.</p> <!-- Aquí va el cargo ofrecido y el tipo de trabajo. -->
+                        <p class="card-text">{{datos.type}}, {{datos.position}}</p> <!-- Aquí va el cargo ofrecido y el tipo de trabajo. -->
                             <hr  />
                         <p class="card-text">{{datos.description}}</p> <!-- Aquí va la descripción del empleo, los detalles de las aptitudes y la información de contacto de la empresa.  -->
                         <p class="card-text">{{datos.email}}</p> <!-- Aquí va la descripción del empleo, los detalles de las aptitudes y la información de contacto de la empresa.  -->
@@ -16,8 +16,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <img src="{{datos.logo}}" class="card-img"> <!-- Aquí va el logo de la compañía. La imagen que está adjunta es solo de prueba. -->
-									<hr  />
-                                <p class="card-text">Date of Publication: {{date datos.createdAt}}.</p> <!-- Un agregado que se me ocurrió para que el usuario sepa cuando la propuesta fue hecha. -->
+                                <br  />
+                                <p class="card-text">{{date datos.createdAt}}</p> <!-- Un agregado que se me ocurrió para que el usuario sepa cuando la propuesta fue hecha. -->
                             </div>
                         </div>
                     </div>
