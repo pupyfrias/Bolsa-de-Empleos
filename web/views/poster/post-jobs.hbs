@@ -1,0 +1,53 @@
+<main class="container">
+	<div class="row">
+		<div class="card">
+			<div class="card-body">
+				<h2 class="modal-title">Post a job</h2>
+				<hr />
+				<form enctype="multipart/form-data" action="/poster" method="POST">
+					<div class="mb-3">
+						<label for="Combox-Categoria">Category:</label>
+						<select class="form-select" name="categoria" id="Combox-Categoria" required>
+							<option value="">Select an Option</option>
+							<option value="Desing">Desing</option>
+							<option value="Programacion">Programacion</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="">Type:</label>
+						<input class="form-check-input" type="radio" name="type" value="Full Time" required>Full Time
+						<input class="form-check-input" type="radio" name="type" value="Part Time" required>Part Time
+						<input class="form-check-input" type="radio" name="type" value="Freelance" required>Freelance
+					</div>
+					<div class="mb-3">
+						<label for="">Company:</label>
+						<input class="form-control" type="text" name="company" id="input-company" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Logo:</label>
+						<input class="form-control" type="file" accept=".jpg, .png" name="logo" id="input-logo">
+					</div>
+					<div class="mb-3">
+						<label for="">URL:</label>
+						<input class="form-control" type="text" name="url" id="input-url">
+					</div>
+					<div class="mb-3">
+						<label for="">Position:</label>
+						<input class="form-control" type="text" id="input-position" name="position" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Location:</label>
+						<input class="form-control" type="text" name="location" id="input-location" required>
+					</div>
+					<div class="mb-3">
+						<label for="">Description:</label><br />
+						<textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" name="email" value="{{email}}">
+						<button class="btn btn-primary" type="submit">Post</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

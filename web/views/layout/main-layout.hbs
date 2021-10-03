@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+    <title>{{pageTitle}}</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand p-left-30" href="/">Job Board</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    {{#if isAdmin}}<a class="nav-link active" href="/admin/job/all">Setting</a>{{/if}}
+                    {{#if isAuthenticated}}<form action="/logout" method="POST">
+                        <input type="submit" class="logout bg-dark text-white border-none" value="Logout">
+                    </form>
+                    {{else}}
+                    <input type="button" class="logout bg-dark text-white border-none" value="Login" id="login">
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    {{#if activeSearch}}
+	
+    <main class="container">
+		<div class="row">
+            <div class="col-md-6 mt-5">
+<center>
+				<input class="form-control" type="text" name="search" id="input-search"  placeholder="Enter your search here" style="width: 100%;">
+            </div>
+            <div class="col-md-4 mt-3">
+                <button class="btn btn-primary " id="btn-Search" style="margin-top: 34px">Search</button>
+            </div>
+            <div class="col-md-2 mt-5">
+				<a  href="/poster" id="link-Post"><button style="width: 100%;" class="btn btn-danger" >Post a job</button></a>
+</center>
+            </div>
+        </div>
+	</main>
+	
+    {{/if}}
+    <div class="m-5">
+        {{#if hasAlert}}
+        <div class="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{alert}}</strong>
+
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        {{/if}}
+        {{{body}}}
+    </div>
+
+</body>
+<script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../../assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="../../assets/js/index.js"></script>
+
+</html>
