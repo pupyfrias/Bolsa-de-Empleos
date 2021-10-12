@@ -1,46 +1,45 @@
 const conenxion = require('../utils/database')
 const Sequelize = require('sequelize')
 
-const jobs = conenxion.define("jobs",{
+const jobs = conenxion.define("jobs", {
 
-    categoria:{
+    category: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    type:{
+    type: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    company:{
+    company: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    logo:{
+    logo: {
         type: Sequelize.STRING,
         allowNull: true
     },
-    url:{
+    url: {
         type: Sequelize.STRING,
         allowNull: true
     },
-    position:{
+    position: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    location:{
+    location: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    description:{
+    description: {
         type: Sequelize.STRING,
         allowNull: false
-    }
-    ,
-    active:{
+    },
+    active: {
         type: Sequelize.BOOLEAN,
         allowNull: false
     },
-    email:{
+    email: {
         type: Sequelize.STRING,
         allowNull: false
     }

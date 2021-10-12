@@ -7,7 +7,7 @@
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne">
-                        Categoria
+                        Category
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
@@ -15,14 +15,14 @@
                     <div class="accordion-body">
 
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="check-desing" {{#if enableDesing}}
+                            <input class="form-check-input" type="checkbox" id="check-design" {{#if enableDesign}}
                                 checked{{/if}}>
-                            <label class="form-check-label" for="check-desing">Desing</label>
+                            <label class="form-check-label" for="check-design">Design</label>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="check-pragramacion" {{#if
-                                enableProgramacion}} checked{{/if}}>
-                            <label class="form-check-label" for="check-pragramacion">Programacion</label>
+                            <input class="form-check-input" type="checkbox" id="check-programming" {{#if
+                                enableProgramming}} checked{{/if}}>
+                            <label class="form-check-label" for="check-programming">Programming</label>
                         </div>
 
 
@@ -66,7 +66,7 @@
                     <th scope="col">Company</th>
                     <th scope="col">Position</th>
                     <th scope="col">Editar</th>
-                    <th scope="col"><input type="checkbox" id="main-check" value="{{this.id}}"></th>
+                    <th scope="col"><input type="checkbox" id="main-check" name="check" value="{{this.id}}"></th>
                 </tr>
             </thead>
             <tbody>

@@ -1,59 +1,56 @@
-
 const apiGet = require('../models/api-get')
 
 exports.GetIndex = (req, res, next) => {
 
 
     let { search } = req.query
-    search = search != undefined ? '?search='+search : ''
+    search = search != undefined ? '?search=' + search : ''
     console.log(search)
-    apiGet.job('api/jobs/all'+search,(datas) =>{
-        
-        let desingList = [];
-        let programacionList = [];
-        let desing = 0;
-        let programacion = 0;
+    apiGet.JobAll(search, (data) => {
 
-        datas.forEach(data => {
+        let designList = [];
+        let programmingList = [];
+        let design = 0;
+        let programming = 0;
 
-            if (data.categoria == 'Desing') {
-                desing++
-                if (desingList.length < 10) {
-                    desingList.push(data)
+        data.rows.forEach(data => {
+
+            if (data.category == 'Design') {
+                design++
+                if (designList.length < 10) {
+                    designList.push(data)
                 }
-            }
-            else if (data.categoria == 'Programacion') {
-                programacion++;
-                if (programacionList.length < 10) {
-                    programacionList.push(data)
+            } else if (data.category == 'Programming') {
+                programming++;
+                if (programmingList.length < 10) {
+                    programmingList.push(data)
                 }
             }
         })
 
 
-        apiGet.categoria((data)=>{
+        apiGet.category((data) => {
 
-            res.render('index',
-            {
+            res.render('index', {
                 pageTitle: 'Home',
-                desing: desingList,
-                programacion: programacionList,
-                allDesing: desing > 10,
-                allProgramcion: programacion > 10,
-                search: search,
+                design: designList,
+                programming: programmingList,
+                allDesign: design > 10,
+                allProgramming: programming > 10,
+                search: search.replace('?search=', ''),
                 activeSearch: true,
-                enableDesing: data[0].enable,
-                enableProgramacion: data[1].enable,
+                enableDesign: design < 1 ? false : data[0].enable,
+                enableProgramming: programming < 1 ? false : data[1].enable,
             })
         })
 
-           
-        }).catch(err => {
-            console.log(err)
-        })
+
+    }).catch(err => {
+        console.log(err)
+    })
 
 
-       
-    
+
+
 
 }

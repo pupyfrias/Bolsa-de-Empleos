@@ -1,41 +1,42 @@
 const conenxion = require('../utils/database')
 const sequelize = require('sequelize')
 
-const users = conenxion.define("users",{
+const users = conenxion.define("users", {
 
-    name:{
+    name: {
         type: sequelize.STRING,
         allowNull: false
     },
-    lastName:{
+    lastName: {
         type: sequelize.STRING,
         allowNull: false
     },
-    userName:{
+    userName: {
         type: sequelize.STRING,
         allowNull: false
     },
-    password:{
+    password: {
         type: sequelize.STRING,
         allowNull: false
     },
-    position:{
+    position: {
         type: sequelize.STRING,
         allowNull: false
     },
-    email:{
+    email: {
         type: sequelize.STRING,
         allowNull: false
-    },codigo:{
-        type:sequelize.STRING,
+    },
+    code: {
+        type: sequelize.STRING,
         allowNull: false
     },
     auth: {
-        type:sequelize.BOOLEAN,
+        type: sequelize.BOOLEAN,
         allowNull: false
     },
-    expiration:{
-        type:sequelize.DATE,
+    expiration: {
+        type: sequelize.DATE,
         allowNull: false
 
     }

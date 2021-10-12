@@ -1,37 +1,23 @@
-const jobs = require('../models/api-get')
+const apiPost = require('../models/api-post')
 
-exports.GetPosterJob =(req,res,next)=>{
-    jobs.findAll().then(result=>{ 
-        res.render("poster/post-jobs",{
-            pageTitle: "Post a Jobs"
-        })
-
-    }).catch(err=>(
-        console.log(err)
-    ))
-    
+exports.GetPosterJob = (req, res, next) => {
+    res.render("poster/post-jobs", {
+        pageTitle: "Post a Jobs"
+    })
 }
 
-exports.PostPosterJob = (req,res,next)=>{
-    const {categoria,type,company,url,position,location,description,email} = req.body;
-    let logo = req.file!= undefined? '/'+req.file.path: ''
+//POST
 
-    jobs.create({
-        categoria:categoria,
-        type:type,
-        company:company,
-        url:url,
-        logo:logo,
-        position:position,
-        location:location,
-        description:description,
-        active: true,
-        email:email
-    }).then(()=>{
-        req.flash('alert','Trabajo creado correctamente')
-        res.redirect('/poster')
-    }).catch(err=>{
-        console.log(err)
+exports.PostPosterJob = (req, res, next) => {
+    const { category, type, company, url, position, location, description, email } = req.body;
+    let logo = req.file != undefined ? '/' + req.file.path : ''
+
+    apiPost.poster(category, type, company, url, position, location, description, email, logo, (data) => {
+
+        if (data) {
+            req.flash('alert', 'Trabajo creado correctamente')
+            res.redirect('/poster')
+        }
+
     })
-    
 }

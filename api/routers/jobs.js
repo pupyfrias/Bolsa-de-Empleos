@@ -3,8 +3,13 @@ const router = express()
 const jobs = require('../controllers/jobs')
 
 
-router.get('/jobs/all',jobs.GetAllJobs)
+router.get('/job/all', jobs.GetAllJobs)
+router.get('/job/:id', jobs.GetOneJob)
+router.get('/job/delete/:id', jobs.GetDeleteJob)
 
+
+router.post('/poster', jobs.PostPosterJob)
+router.post('/poster/:id', jobs.PostUpdateJob)
 
 
 

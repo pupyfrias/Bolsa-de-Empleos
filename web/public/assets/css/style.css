@@ -1,172 +1,165 @@
-#btn-Search{
-
+#btn-Search {
     font-size: 15px;
     color: rgb(255, 255, 255);
     margin-top: 1cm;
     margin-right: 20cm;
     margin-bottom: 1cm;
     background-color: rgb(33, 133, 208);
-    border:0px;
+    border: 0px;
     width: 80px;
-    height: 33px;  
+    height: 33px;
 }
 
-#btn-Post{
-
+#btn-Post {
     color: rgb(255, 255, 255);
     background-color: rgb(33, 186, 69);
-    border:0px;
+    border: 0px;
     width: 130px;
     height: 33px;
 }
 
-#link-Post{
+#link-Post {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
 
-#input-search{
+#input-search {
     width: 175px;
     height: 38px;
-    display: inline  !important;
+    display: inline !important;
 }
 
-#input-search1{
+#input-search1 {
     width: 175px;
     height: 38px;
-    display: inline  !important;
+    display: inline !important;
 }
 
-#h2-desing{
-
+#h2-design {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
 }
 
-#h2-programming{
-    
+#h2-programming {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
 }
 
-#img-desing{
-
+#img-design {
     width: 30px;
-    margin-left: 13.7cm ;
+    margin-left: 13.7cm;
 }
 
-#img-programming{
+#img-programming {
     width: 30px;
-    margin-left: 13cm ;   
+    margin-left: 13cm;
 }
+
 
 /* Diseño jobs*/
 
-#h2-post{
+#h2-post {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#post-label-categoria{
+#post-label-category {
     margin-right: 1cm;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
-#type-post{
+#type-post {
     margin-right: 2cm;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#company-post{
+#company-post {
     margin-right: 1cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#logo-post{
-    margin-right:  1.8cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+#logo-post {
+    margin-right: 1.8cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#url-post{
-    margin-right:  1.9cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+#url-post {
+    margin-right: 1.9cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#position-post{
-    margin-right:  1.1cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+#position-post {
+    margin-right: 1.1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#location-post{
-    margin-right:  1cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;     
+#location-post {
+    margin-right: 1cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
-#description-post{
-    margin-right:  0.5cm;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;       
+#description-post {
+    margin-right: 0.5cm;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
-#textarea-post{
+#textarea-post {
     resize: none;
     margin-left: 2.65cm;
-
 }
 
-#boton-post{
-
-
+#boton-post {
     font-size: 15px;
     color: rgb(255, 255, 255);
     margin-bottom: 1cm;
     background-color: rgb(33, 133, 208);
-    border:0px;
+    border: 0px;
     width: 80px;
     height: 33px;
 }
 
-.d-inherit{
+.d-inherit {
     display: inherit !important;
 }
 
-.h-200{
+.h-200 {
     height: 200px;
 }
 
-.p-left{
+.p-left {
     padding-left: 1115px !important;
 }
 
-.p-left-30{
+.p-left-30 {
     padding-left: 30px;
 }
-
 
 .login {
     width: 400px;
     margin: 16px auto;
     font-size: 16px;
-  }
-  
-  /* Reset top and bottom margins from certain elements */
-  .login-header,
-  .login p {
+}
+
+
+/* Reset top and bottom margins from certain elements */
+
+.login-header,
+.login p {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  
-  /* The triangle form is achieved by a CSS hack */
-  .login-triangle {
+}
+
+
+/* The triangle form is achieved by a CSS hack */
+
+.login-triangle {
     width: 0;
     margin-right: auto;
     margin-left: auto;
     border: 12px solid transparent;
     border-bottom-color: black;
-  }
-  
-  .login-header {
+}
+
+.login-header {
     background: black;
     padding: 20px;
     font-size: 1.4em;
@@ -174,19 +167,21 @@
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-  }
-  
-  .login-container {
+}
+
+.login-container {
     background: #ebebeb;
     padding: 12px;
-  }
-  
-  /* Every row inside .login-container is defined with p tags */
-  .login p {
+}
+
+
+/* Every row inside .login-container is defined with p tags */
+
+.login p {
     padding: 12px;
-  }
-  
-  .login input {
+}
+
+.login input {
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -196,51 +191,56 @@
     outline: 0;
     font-family: inherit;
     font-size: 0.95em;
-  }
-  
-  .login input[type="email"],
-  .login input[type="password"] {
+}
+
+.login input[type="email"],
+.login input[type="password"] {
     background: #fff;
     border-color: #bbb;
     color: #555;
-  }
-  
-  /* Text fields' focus effect */
-  .login input[type="email"]:focus,
-  .login input[type="password"]:focus {
+}
+
+
+/* Text fields' focus effect */
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
     border-color: #888;
-  }
-  
-  .login input[type="submit"] {
+}
+
+.login input[type="submit"] {
     background: black;
     border-color: transparent;
     color: #fff;
     cursor: pointer;
-  }
-  
-  .login input[type="submit"]:hover {
+}
+
+.login input[type="submit"]:hover {
     background: #17c;
-  }
-  
-  /* Buttons' focus effect */
-  .login input[type="submit"]:focus {
+}
+
+
+/* Buttons' focus effect */
+
+.login input[type="submit"]:focus {
     border-color: #05a;
-  }
-.border-none{
+}
+
+.border-none {
     border: none;
 }
 
-.logout{
+.logout {
     position: absolute;
     top: 15px;
     right: 40px;
 }
 
-.alert{
+.alert {
     display: flex;
     justify-content: center;
 }
 
-.center{
+.center {
     text-align: center;
 }

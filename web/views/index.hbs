@@ -1,7 +1,7 @@
 
-{{#if enableDesing}}
+{{#if enableDesign}}
 <h2><img src="https://us.123rf.com/450wm/pytyczech/pytyczech1707/pytyczech170700051/81581133-icono-de-gota-negra-s%C3%ADmbolo-de-aceite-o-agua-ejemplo-plano-simple-del-vector-con-la-sombra-aislada-e.jpg?ver=6"
-        alt="desing.JPG" id="img-desing"><a href='/job/all/desing'> Desing</h2></a>
+        alt="design.JPG" id="img-design"><a href='/job/all/design'> Design</h2></a>
 
 
 <table class="table table-bordered table-hover mt-4">
@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each desing}}
+        {{#each design}}
         <tr class='clickable-row' data-href='/job/{{this.id}}' style="cursor: pointer;">
             <td>{{this.location}}</td>
             <td>{{this.company}}</td>
@@ -22,14 +22,14 @@
         {{/each}}
     </tbody>
 </table>
-{{#if allDesing}}
-<a href="job/all/desing">See more jobs</a>
+{{#if allDesign}}
+<a href="job/all/design">See more jobs</a>
 {{/if}}
 {{/if}}
 
-{{#if enableProgramacion}}
+{{#if enableProgramming}}
 <h2><img src="https://www.pngitem.com/pimgs/m/174-1746684_java-java-logo-black-png-transparent-png.png"
-        id="img-programming"><a href="/job/all/programacion"> Programacion</a></h2>
+        id="img-programming"><a href="/job/all/programming"> Programming</a></h2>
 <table class="table table-bordered table-hover mt-4">
     <thead class="table-dark">
         <tr>
@@ -39,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each programacion}}
+        {{#each programming}}
         <tr class='clickable-row' data-href='/job/{{this.id}}' style="cursor: pointer;">
             <td>{{this.location}}</td>
             <td>{{this.company}}</td>
@@ -48,7 +48,7 @@
         {{/each}}
     </tbody>
 </table>
-{{#if allProgramcion}}
-<a href="job/all/programacion">See more jobs</a>
+{{#if allProgramming}}
+<a href="job/all/programming">See more jobs</a>
 {{/if}}
 {{/if}}
