@@ -7,8 +7,6 @@
         alt="design.JPG" id="img-design">Design</h2>
 {{/if}}
 
-    
-<br>
 <table class="table table-bordered table-hover mt-4">
     <thead class="table-dark">
         <tr>
@@ -19,11 +17,11 @@
     </thead>
     <tbody>
         {{#each datos}}
-        <tr class='clickable-row' data-href='/job/{{this.id}}' style="cursor: pointer;">
-            <td>{{this.location}}</td>
-            <td>{{this.company}}</td>
-            <td>{{this.position}}</td>
-        </tr>
+            <tr class='clickable-row' data-href='/job/{{this.id}}' style="cursor: pointer;">
+                <td>{{this.location}}</td>
+                <td>{{this.company}}</td>
+                <td>{{this.position}}</td>
+            </tr>
         {{/each}}
     </tbody>
 </table>
@@ -37,8 +35,8 @@
         </li>
         {{#if (compare page 1)}}
             {{#if (compare last 2)}}
-                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
-                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
+                <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
             {{else}} 
                 <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
                 <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
@@ -49,23 +47,23 @@
 
              {{#if (compare page last)}}
                 {{#if (compare page 2)}}
-                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
-                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                    <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
                 {{else}}
-                        <li class="page-item "><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 2}}{{else}}{{url}}?page={{min page 2}}{{/if}}">{{min page 2}}</a></li>
-                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
-                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                    <li class="page-item "><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 2}}{{else}}{{url}}?page={{min page 2}}{{/if}}">{{min page 2}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                    <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
                 {{/if}}
             {{else}}
                 {{#if (compare last 2)}}
-                        <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
-                        <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                    <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
                 {{else}} 
-                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
-                <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
-                <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{min page 1}}{{else}}{{url}}?page={{min page 1}}{{/if}}">{{min page 1}}</a></li>
+                    <li class="page-item active"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{page}}{{else}}{{url}}?page={{page}}{{/if}}">{{page}}</a></li>
+                    <li class="page-item"><a class="page-link" href="{{#if hasParams}} {{url}}&page={{sum page 1}}{{else}}{{url}}?page={{sum page 1}}{{/if}}">{{sum page 1}}</a></li>
                 {{/if}}
-        {{/if}}
+            {{/if}}
         {{/if}}
 
         <li class="page-item {{#if (compare page last)}}disabled{{/if}}">
@@ -75,6 +73,5 @@
         </li>
     </ul>
 </nav>
-    <p class="center"><strong>{{last}}</strong></p>
 {{/if}}
 
