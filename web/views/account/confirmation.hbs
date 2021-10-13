@@ -6,21 +6,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div></div>{{/if}}
 <div class="center">
-
-
-
-{{#if expiration}}
-<form action="/new-code" method="post">
-<input type="hidden" value="{{id}}" name="id">
-<input type="hidden" value="{{email}}" name="email">
-<input type="submit" value="Enviar de nuevo" class="btn btn-primary">
-</form>
-{{else}}
-<p>Ingresa el código que enviamos a tu correo para combirmar tu cuenta</p>
-<form action="/confirmation" method="post">
-<input type="text" name="code"{{#if errorCode}} value="{{code}}"{{/if}}>
-<input type="submit" value="enviar" class="btn btn-primary">
-</form>
-{{/if}}
+    {{#if expiration}}
+        <form action="/new-code" method="post">
+            <input type="hidden" value="{{id}}" name="id">
+            <input type="hidden" value="{{email}}" name="email">
+            <input type="submit" value="Enviar de nuevo" class="btn btn-primary">
+        </form>
+    {{else}}
+<div style="margin-left: 35%; margin-right: 35%;">
+    <div class="card card-body center">
+        <form action="/confirmation" method="post">
+        <p>Ingresa el código que enviamos a tu correo para comfirmar tu cuenta.</p>
+            <input class="form-control" type="text" name="code"{{#if errorCode}} value="{{code}}"{{/if}}>
+            <div class="mb-3"></div>
+            <input type="submit" value="Enviar" class="btn btn-primary" style="width: 100%;">
+        </form>
+    </div>
+</div>
+    {{/if}}
 </div>
 
