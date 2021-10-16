@@ -1,4 +1,4 @@
-#btn-Search {
+/* #btn-Search {
     font-size: 15px;
     color: rgb(255, 255, 255);
     margin-top: 1cm;
@@ -8,7 +8,7 @@
     border: 0px;
     width: 80px;
     height: 33px;
-}
+} */
 
 #btn-Post {
     color: rgb(255, 255, 255);
@@ -18,14 +18,10 @@
     height: 33px;
 }
 
-#link-Post {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
+
 
 #input-search {
-    width: 175px;
-    height: 38px;
+    width: 30%;
     display: inline !important;
 }
 
@@ -33,6 +29,11 @@
     width: 175px;
     height: 38px;
     display: inline !important;
+}
+
+#btn-post {
+    display: flex;
+    float: right;
 }
 
 #h2-design {
@@ -54,7 +55,6 @@
     width: 30px;
     margin-left: 13cm;
 }
-
 
 /* Diseño jobs*/
 
@@ -139,15 +139,12 @@
     font-size: 16px;
 }
 
-
 /* Reset top and bottom margins from certain elements */
 
-.login-header,
-.login p {
+.login-header, .login p {
     margin-top: 0;
     margin-bottom: 0;
 }
-
 
 /* The triangle form is achieved by a CSS hack */
 
@@ -174,7 +171,6 @@
     padding: 12px;
 }
 
-
 /* Every row inside .login-container is defined with p tags */
 
 .login p {
@@ -193,18 +189,15 @@
     font-size: 0.95em;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
+.login input[type="email"], .login input[type="password"] {
     background: #fff;
     border-color: #bbb;
     color: #555;
 }
 
-
 /* Text fields' focus effect */
 
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
+.login input[type="email"]:focus, .login input[type="password"]:focus {
     border-color: #888;
 }
 
@@ -218,7 +211,6 @@
 .login input[type="submit"]:hover {
     background: #17c;
 }
-
 
 /* Buttons' focus effect */
 
